@@ -43,26 +43,44 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const nav = document.querySelectorAll('a');
 
-nav[0].innerText = siteContent['nav']['nav-item-1']
-nav[1].innerText = siteContent['nav']['nav-item-2']
-nav[2].innerText = siteContent['nav']['nav-item-3']
-nav[3].innerText = siteContent['nav']['nav-item-4']
-nav[4].innerText = siteContent['nav']['nav-item-5']
-nav[5].innerText = siteContent['nav']['nav-item-6']
+nav[0].innerText = siteContent['nav']['nav-item-1'];
+nav[1].innerText = siteContent['nav']['nav-item-2'];
+nav[2].innerText = siteContent['nav']['nav-item-3'];
+nav[3].innerText = siteContent['nav']['nav-item-4'];
+nav[4].innerText = siteContent['nav']['nav-item-5'];
+nav[5].innerText = siteContent['nav']['nav-item-6'];
 
 const hOne = document.querySelector('h1');
 const ctaIMG = document.querySelector('#cta-img');
 const newButt = document.querySelector('button');
 
-hOne.innerText = siteContent['cta']['h1']
-ctaIMG.setAttribute('src', siteContent['cta']['img-src'])
-newButt.innerText = siteContent['cta']['button']
+hOne.innerText = siteContent['cta']['h1'];
+ctaIMG.setAttribute('src', siteContent['cta']['img-src']);
+newButt.innerText = siteContent['cta']['button'];
 
 const contentHeads = document.querySelectorAll('.text-content h4');
 const contentP = document.querySelectorAll('.text-content p');
+const midIMG = document.querySelector('#middle-img');
 
 contentHeads[0].innerText = siteContent['main-content']['features-h4'];
 contentHeads[1].innerText = siteContent['main-content']['about-h4'];
 contentHeads[2].innerText = siteContent['main-content']['services-h4'];
 contentHeads[3].innerText = siteContent['main-content']['product-h4'];
 contentHeads[4].innerText = siteContent['main-content']['vision-h4'];
+
+contentP[0].innerText = siteContent['main-content']['features-content'];
+contentP[1].innerText = siteContent['main-content']['about-content'];
+contentP[2].innerText = siteContent['main-content']['services-content'];
+contentP[3].innerText = siteContent['main-content']['product-content'];
+contentP[4].innerText = siteContent['main-content']['vision-content'];
+
+midIMG.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+const contactHead = document.querySelector('.contact h4');
+const contactP = document.querySelectorAll('.contact p');
+
+contactHead.innerText = siteContent['contact']['contact-h4'];
+
+contactP[0].innerText = siteContent['contact']['address'];
+contactP[1].innerText = siteContent['contact']['phone'];
+contactP[2].innerText = siteContent['contact']['email'];
