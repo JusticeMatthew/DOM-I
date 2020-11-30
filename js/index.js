@@ -41,21 +41,28 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-const nav1 = document.querySelector('a');
-const nav2 = nav1.nextElementSibling;
-const nav3 = nav2.nextElementSibling;
-const nav4 = nav3.nextElementSibling;
-const nav5 = nav4.nextElementSibling;
-const nav6 = nav5.nextElementSibling;
+const nav = document.querySelectorAll('a');
 
-nav1.innerText = siteContent['nav']['nav-item-1']
-nav2.innerText = siteContent['nav']['nav-item-2']
-nav3.innerText = siteContent['nav']['nav-item-3']
-nav4.innerText = siteContent['nav']['nav-item-4']
-nav5.innerText = siteContent['nav']['nav-item-5']
-nav6.innerText = siteContent['nav']['nav-item-6']
+nav[0].innerText = siteContent['nav']['nav-item-1']
+nav[1].innerText = siteContent['nav']['nav-item-2']
+nav[2].innerText = siteContent['nav']['nav-item-3']
+nav[3].innerText = siteContent['nav']['nav-item-4']
+nav[4].innerText = siteContent['nav']['nav-item-5']
+nav[5].innerText = siteContent['nav']['nav-item-6']
 
 const hOne = document.querySelector('h1');
 const ctaIMG = document.querySelector('#cta-img');
+const newButt = document.querySelector('button');
+
 hOne.innerText = siteContent['cta']['h1']
 ctaIMG.setAttribute('src', siteContent['cta']['img-src'])
+newButt.innerText = siteContent['cta']['button']
+
+const contentHeads = document.querySelectorAll('.text-content h4');
+const contentP = document.querySelectorAll('.text-content p');
+
+contentHeads[0].innerText = siteContent['main-content']['features-h4'];
+contentHeads[1].innerText = siteContent['main-content']['about-h4'];
+contentHeads[2].innerText = siteContent['main-content']['services-h4'];
+contentHeads[3].innerText = siteContent['main-content']['product-h4'];
+contentHeads[4].innerText = siteContent['main-content']['vision-h4'];
