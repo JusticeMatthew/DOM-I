@@ -40,3 +40,69 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+// Updated HTML data
+
+const nav = document.querySelectorAll('a');
+
+nav.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index}`]);
+
+const hOne = document.querySelector('h1');
+const ctaIMG = document.querySelector('#cta-img');
+const newButt = document.querySelector('button');
+
+
+hOne.innerHTML = siteContent['cta']['h1'].split(' ').join('<br>');
+ctaIMG.setAttribute('src', siteContent['cta']['img-src']);
+newButt.innerText = siteContent['cta']['button'];
+
+const contentHeads = document.querySelectorAll('.text-content h4');
+const contentP = document.querySelectorAll('.text-content p');
+const midIMG = document.querySelector('#middle-img');
+
+contentHeads[0].innerText = siteContent['main-content']['features-h4'];
+contentHeads[1].innerText = siteContent['main-content']['about-h4'];
+contentHeads[2].innerText = siteContent['main-content']['services-h4'];
+contentHeads[3].innerText = siteContent['main-content']['product-h4'];
+contentHeads[4].innerText = siteContent['main-content']['vision-h4'];
+
+contentP[0].innerText = siteContent['main-content']['features-content'];
+contentP[1].innerText = siteContent['main-content']['about-content'];
+contentP[2].innerText = siteContent['main-content']['services-content'];
+contentP[3].innerText = siteContent['main-content']['product-content'];
+contentP[4].innerText = siteContent['main-content']['vision-content'];
+
+midIMG.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+const contactHead = document.querySelector('.contact h4');
+const contactP = document.querySelectorAll('.contact p');
+
+contactHead.innerText = siteContent['contact']['contact-h4'];
+
+contactP[0].innerText = siteContent['contact']['address'];
+contactP[0].style.width = '9rem';
+contactP[1].innerText = siteContent['contact']['phone'];
+contactP[2].innerText = siteContent['contact']['email'];
+
+const foot = document.querySelector('footer');
+
+foot.innerText = siteContent['footer']['copyright'];
+
+// New content added
+
+nav.forEach(item => item.style.color = 'green');
+
+const linkOne = document.createElement('a');
+linkOne.innerText = 'Link One';
+linkOne.href = '#';
+linkOne.style.color = 'green';
+document.querySelector('nav').appendChild(linkOne);
+
+
+// Did it this way due to the extra anchor tag in the HTML, realistically I would remove that if it was my own code :P
+const linkTwo = document.createElement('a');
+linkTwo.innerText = 'Link Two';
+linkTwo.href = '#';
+linkTwo.style.color = 'green';
+document.querySelector('nav a').prepend(linkTwo);
