@@ -46,7 +46,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const nav = document.querySelectorAll('a');
 
-nav.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index}`]);
+nav.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index + 1}`]);
 
 const hOne = document.querySelector('h1');
 const ctaIMG = document.querySelector('#cta-img');
@@ -99,10 +99,8 @@ linkOne.href = '#';
 linkOne.style.color = 'green';
 document.querySelector('nav').appendChild(linkOne);
 
-
-// Did it this way due to the extra anchor tag in the HTML, realistically I would remove that if it was my own code :P
 const linkTwo = document.createElement('a');
 linkTwo.innerText = 'Link Two';
 linkTwo.href = '#';
 linkTwo.style.color = 'green';
-document.querySelector('nav a').prepend(linkTwo);
+document.querySelector('nav').prepend(linkTwo);
