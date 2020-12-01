@@ -41,20 +41,19 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+
+// Updated HTML data
+
 const nav = document.querySelectorAll('a');
 
-nav[0].innerText = siteContent['nav']['nav-item-1'];
-nav[1].innerText = siteContent['nav']['nav-item-2'];
-nav[2].innerText = siteContent['nav']['nav-item-3'];
-nav[3].innerText = siteContent['nav']['nav-item-4'];
-nav[4].innerText = siteContent['nav']['nav-item-5'];
-nav[5].innerText = siteContent['nav']['nav-item-6'];
+nav.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index}`]);
 
 const hOne = document.querySelector('h1');
 const ctaIMG = document.querySelector('#cta-img');
 const newButt = document.querySelector('button');
 
-hOne.innerText = siteContent['cta']['h1'];
+
+hOne.innerHTML = siteContent['cta']['h1'].split(' ').join('<br>');
 ctaIMG.setAttribute('src', siteContent['cta']['img-src']);
 newButt.innerText = siteContent['cta']['button'];
 
@@ -82,5 +81,28 @@ const contactP = document.querySelectorAll('.contact p');
 contactHead.innerText = siteContent['contact']['contact-h4'];
 
 contactP[0].innerText = siteContent['contact']['address'];
+contactP[0].style.width = '9rem';
 contactP[1].innerText = siteContent['contact']['phone'];
 contactP[2].innerText = siteContent['contact']['email'];
+
+const foot = document.querySelector('footer');
+
+foot.innerText = siteContent['footer']['copyright'];
+
+// New content added
+
+nav.forEach(item => item.style.color = 'green');
+
+const linkOne = document.createElement('a');
+linkOne.innerText = 'Link One';
+linkOne.href = '#';
+linkOne.style.color = 'green';
+document.querySelector('nav').appendChild(linkOne);
+
+
+// Did it this way due to the extra anchor tag in the HTML, realistically I would remove that if it was my own code :P
+const linkTwo = document.createElement('a');
+linkTwo.innerText = 'Link Two';
+linkTwo.href = '#';
+linkTwo.style.color = 'green';
+document.querySelector('nav a').prepend(linkTwo);
